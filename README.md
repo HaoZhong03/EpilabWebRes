@@ -1,48 +1,64 @@
-# [Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)
+# EPILAB门户网页项目
 
-[![Screenshot](preview.png)](https://hugoblox.com/hugo-themes/)
+本项目为[中国农业大学](https://www.cau.edu.cn/)[动物科学技术学院](https://cast1.cau.edu.cn/)动物遗传育种系EPILAB团队的学术网页资源仓库，由团队中Zhong、Chen、Jiang三人进行维护。拟使用的域名为：cau666.yyEpiLab.cn。
 
-The **Research Group Template** empowers your research group to easily create a beautiful website with a stunning homepage, news, academic publications, events, team profiles, and a contact form.
+项目基于模板[Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)进行构建。
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, widget-based Wowchemy page builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+## 项目文件树结构
+```
+.
+├── .github # GitHub 平台相关
+├── assets 资源与样式
+├── config # 站点配置
+├── content # 网站的所有展示内容
+│   ├── _index.md # 首页
+│   ├── admin 
+│   ├── authors # 成员介绍，每人一个文件夹
+│   ├── contact # 联系方式
+│   ├── event # 活动
+│   ├── people # 成员列表
+│   ├── post # 动态
+│   ├── publication # 学术成果
+│   └── tour # 项目展示
+├── images # 其他图片资源
+├── static # 其他静态资源
+├── .gitignore
+├── .editorconfig
+├── go.mod
+├── go.sum
+├── LICENSE.md
+├── netlify.toml
+├── preview.png
+├── README.md
+└── theme.toml
+```
+## 本项目用到的工具或软件
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/hugo-themes/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://twitter.com/wowchemy)
+维护该项目主要涉及内容编辑、本地预览和自动化部署三个方面。根据项目文件中的配置和脚本，你需要准备以下工具和软件：
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+1. 本地开发：
 
-[Check out the latest demo](https://research-group.netlify.app/) of what you'll get in less than 60 seconds, or [view the showcase](https://hugoblox.com/creators/).
+- Hugo (Extended版)：用于在本地预览和构建静态文件。
+- Go：Hugo的依赖。
 
-The integrated [**Wowchemy**](https://hugoblox.com) website builder and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+- Git & GitHub：代码托管中心。
 
-- 👉 [**Get Started**](https://hugoblox.com/hugo-themes/)
-- 📚 [View the **documentation**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Wowchemy research community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- ⬇️ **Automatically import citations from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- 🐦 Share your new site with the community: [@wowchemy](https://twitter.com/wowchemy) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithWowchemy](https://twitter.com/search?q=%23MadeWithWowchemy&src=typed_query)
-- 🗳 [Take the survey and help us improve #OpenSource](https://forms.gle/NioD9VhUg7PNmdCAA)
-- 🚀 [Contribute improvements](https://github.com/HugoBlox/hugo-blox-builder/blob/main/CONTRIBUTING.md) or [suggest improvements](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://docs.hugoblox.com/hugo-tutorials/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+- Python 3.12+ & Academic CLI：用于运行 academic 脚本，将 publications.bib 自动转换为网站的论文页面。
 
-## We ask you, humbly, to support this open source movement
+2. 服务器部署：
 
-Today we ask you to defend the open source independence of the Wowchemy website builder and themes 🐧
+- Web 服务器 (Nginx 或 Apache)：在 ECS 上部署，用于托管 Hugo 生成的 public/ 静态文件夹。
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+- 终端工具 (如 Termius, PuTTY, iTerm2)：通过 SSH 登录服务器进行配置。
 
-### [❤️ Click here to become a GitHub Sponsor, unlocking awesome perks such as _exclusive academic templates and widgets_](https://github.com/sponsors/gcushen)
+- 传输工具 (如 FileZilla, WinSCP)：用于将本地生成的 public/ 文件夹手动上传到服务器。
 
-## Demo credits
+- GitHub Actions (SSH 插件)：在代码推送时自动通过 SSH 将编译后的文件拉取或推送到阿里/腾讯云服务器。
 
-Please replace the demo images with your own.
+## 项目进行计划：
 
-- [Female scientist](https://unsplash.com/photos/uVnRa6mOLOM)
-- [2 Coders](https://unsplash.com/photos/kwzWjTnDPLk)
-- [Cafe](https://unsplash.com/photos/RnDGGnMEOao)
-- Blog posts
-  - https://unsplash.com/photos/AndE50aaHn4
-  - https://unsplash.com/photos/OYzbqk2y26c
-- Avatars
-  - https://unsplash.com/photos/5yENNRbbat4
-  - https://unsplash.com/photos/WNoLnJo7tS8
+**3月2日-3月8日**：完善网页整体框架及网页元素，制作信息收集清单及收集表。
+
+**3月9日-3月15日**：收集信息并整理，准备域名购买、备案及服务器部署工作。
+
+**3月16日-3月22日**：微调网站细节，准备上线。
