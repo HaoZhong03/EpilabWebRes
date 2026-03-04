@@ -3,7 +3,7 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Epilab # Website name
+title: EpiLab # Website name
 baseURL: 'https://cau666.yyEpilab.cn/' # Website URL
 
 ############################

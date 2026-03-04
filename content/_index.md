@@ -14,7 +14,7 @@ sections:
       text: |
         <br>
         
-        The **Epilab** has been a center of excellence for cattle breeding since its founding in 20xx.
+        The **EpiLab** has been a center of excellence for cattle breeding since its founding in 20xx.
   
   - block: collection
     content:
@@ -34,26 +34,6 @@ sections:
     design:
       view: card
       columns: '1'
-  
-  - block: markdown
-    content:
-      title:
-      subtitle: ''
-      text:
-    design:
-      columns: '1'
-      background:
-        image: 
-          filename: coders.jpg
-          filters:
-            brightness: 1
-          parallax: false
-          position: center
-          size: cover
-          text_color_light: true
-      spacing:
-        padding: ['20px', '0', '20px', '0']
-      css_class: fullscreen
 
   - block: collection
     content:
@@ -67,6 +47,26 @@ sections:
     design:
       view: citation
       columns: '1'
+
+  - block: markdown
+    content:
+      title:
+      subtitle: ''
+      text:
+    design:
+      columns: '1'
+      background:
+        image: 
+          filename: cow.png
+          filters:
+            brightness: 1
+          parallax: false
+          position: center
+          size: cover
+          text_color_light: true
+      spacing:
+        padding: ['20px', '0', '20px', '0']
+      css_class: fullscreen
 
   - block: markdown
     content:
