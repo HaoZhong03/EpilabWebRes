@@ -7,78 +7,79 @@
 
 appearance:
   theme_day: minimal
-  theme_night:
+  theme_night: minimal
   font: native
   font_size: L
 
-# SEO
+
 
 marketing:
-  seo:
+  seo: # SEO搜索引擎优化
     site_type: Organization
     local_business_type: ''
     org_name: ''
-    description: 'A highly-customizable Hugo research group theme powered by Wowchemy website builder.'
+    description: '中国农业大学动物科学技术学院 EpiLab 团队学术资源网页，专注于动物遗传育种及学术成果展示。'
     twitter: 'GetResearchDev'
-  analytics:
+  analytics: # 网站流量分析
     google_analytics: ''
     baidu_tongji: ''
     google_tag_manager: ''
     microsoft_clarity: ''
-  verification:
+  verification: # 搜索引擎所有权验证
     google: ''
     baidu: ''
 
-# Site header
+# Site header 站点页眉（导航栏）
 
 header:
   navbar:
-    enable: true
-    align: r
-    show_logo: true
-    show_language: false
-    show_day_night: true
-    show_search: true
-    highlight_active_link: false
+    enable: true # 是否启动导航栏
+    align: r # 链接对齐方式
+    show_logo: true # 是否显示logo
+    show_language: false # 是否显示语言切换
+    show_day_night: true # 是否显示日夜切换
+    show_search: true # 是否显示搜索
+    highlight_active_link: true # 是否高亮显示当前激活的页面链接
 
 # Site footer
 
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} EpiLab. This work is licensed under {license}' # 版权声明内容
     license:
-      enable: true
-      allow_derivatives: false
-      share_alike: true
-      allow_commercial: false
+      enable: true # 是否在页脚显示许可证信息
+      allow_derivatives: false # 许可证：是否允许演绎作品
+      share_alike: true # 许可证：是否要求以相同方式共享
+      allow_commercial: false # 许可证：是否允许商业用途
 
-# Localization
+# Localization 本地化设置
 
 locale:
-  date_format: 'Jan 2, 2006'
-  time_format: '3:04 PM'
+  date_format: '2006-01-02'
+  time_format: '15:04'
   address_format: en-us
 
-# Site features
+# Site features 站点功能特性
 
-features:
-  syntax_highlighter:
+features: 
+  syntax_highlighter: # 代码语法高亮
     enable: false
     extra_languages:
       - r
       - latex
-  math:
+      - python
+  math: # 是否支持数学公式
+    enable: true
+  privacy_pack: # 隐私保护增强包
     enable: false
-  privacy_pack:
-    enable: false
-  repository:
-    url: 'https://github.com/<username>/<repository>'
+  repository: # 源码仓库链接
+    url: ''
     content_dir: content
     branch: main
-  avatar:
+  avatar: # 头像设置
     gravatar: false
     shape: circle
-  comment:
+  comment: # 评论系统
     provider: ''
     disqus:
       shortname: ''
@@ -90,28 +91,28 @@ features:
       repo_id: ''
       category: ''
       category_id: ''
-  search:
+  search: # 站内搜索配置
     provider: wowchemy
     algolia:
       app_id: ''
       api_key: ''
       index_name: ''
       show_logo: false
-  map:
+  map: # 地图显示配置
     provider: 'mapnik'
     api_key: ''
     zoom: 15
 
 # Extensions
 
-extensions:
+extensions: # 扩展插件
   decap_cms:
     branch: main
     local_backend: false
   academicons:
     enable: true
 
-# Citation style
+# Citation style # 引用文献样式
 
 publications:
   date_format: January 2006

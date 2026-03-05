@@ -1,16 +1,17 @@
 ---
 title: Tour
-date: 2022-10-24
+date: 2026-03-05
 
 type: landing
 
 sections:
+# 使用 slider（幻灯片/轮播图）区块
   - block: slider
-    content:
+    content: # 幻灯片内容列表
       slides:
       - title: 👋 Welcome to the group
         content: Take a look at what we're working on...
-        align: center
+        align: center # 文字对齐方式：居中
         background:
           image:
             filename: coders.jpg

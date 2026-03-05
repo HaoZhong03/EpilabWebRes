@@ -1,5 +1,6 @@
 ---
 title: Here we build the site
+draft: false # 是否为草稿，若是则不渲染
 date: 2026-03-04
 image:
   focal_point: 'top'

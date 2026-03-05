@@ -5,6 +5,7 @@
 项目基于模板[Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)进行构建。
 
 ## 项目文件树结构
+
 ```
 .
 ├── .github # GitHub 平台相关
@@ -12,15 +13,14 @@
 ├── config # 站点配置
 ├── content # 网站的所有展示内容
 │   ├── _index.md # 首页
-│   ├── admin 
+│   ├── admin # 不用管
 │   ├── authors # 成员介绍，每人一个文件夹
 │   ├── contact # 联系方式
 │   ├── event # 活动
 │   ├── people # 成员列表
-│   ├── post # 动态
+│   ├── news # 动态
 │   ├── publication # 学术成果
-│   └── tour # 项目展示
-├── images # 其他图片资源
+│   └── (disuse)tour # 项目展示，已整合至首页
 ├── static # 其他静态资源
 ├── .gitignore
 ├── .editorconfig
@@ -32,6 +32,13 @@
 ├── README.md
 └── theme.toml
 ```
+
+hugo将上述资源构建为`public`h和`resources`文件夹，作为可直接访问的网站本体。
+
+在调试过程中，请始终使用`Hugo server`进行实时调试，以确保网页功能正常。
+
+部分文件可设置为draft（草稿），hugo默认不渲染，此时使用`Hugo server -D`命令渲染草稿，请灵活使用该功能进行调试。
+
 ## 本项目用到的工具或软件
 
 维护该项目主要涉及内容编辑、本地预览和自动化部署三个方面。根据项目文件中的配置和脚本，你需要准备以下工具和软件：
@@ -62,3 +69,13 @@
 **3月9日-3月15日**：收集信息并整理，准备域名购买、备案及服务器部署工作。
 
 **3月16日-3月22日**：微调网站细节，准备上线。
+
+## Issue List/代办项目清单
+
+- [ ] 首页介绍语
+- [ ] 首页ppt模块内容
+- [ ] news/events/publication：合适的banner图片
+- [ ] people/publication：整理成员及近年成果介绍
+- [x] 完善news/events/publication(conference-paper/journal-article/preprint)模板
+- [ ] Contact页面课题组联系方式及地理位置
+- [ ] Contact页面网页表单提供商
