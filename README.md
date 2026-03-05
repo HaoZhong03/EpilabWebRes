@@ -79,3 +79,4 @@ hugo将上述资源构建为`public`h和`resources`文件夹，作为可直接�
 - [x] 完善news/events/publication(conference-paper/journal-article/preprint)模板
 - [ ] Contact页面课题组联系方式及地理位置
 - [ ] Contact页面网页表单提供商
+- [ ] 部署到ECS的actions
