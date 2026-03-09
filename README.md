@@ -4,6 +4,10 @@
 
 项目基于模板[Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)进行构建。
 
+![首页](./static/home.png)
+
+![个人档案页面](./static/Profile.png)
+
 ## 项目文件树结构
 
 ```
