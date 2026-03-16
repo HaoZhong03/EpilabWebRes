@@ -1,32 +1,32 @@
 ---
-# 显示名称，将作为个人主页的大标题
-title: Hao Zhong
 
+# 显示名称，将作为个人主页的大标题
+title: Name
+draft: true # 是否为草稿，若是则不渲染
 # 完整姓名（用于 SEO 搜索引擎优化）
-first_name: Hao
-last_name: Zhong
+first_name: FirstName
+last_name: LastName
 
 # 是否为本站的主导用户（超级用户）？
 # 设置为 true 后，该用户的头像和信息通常会出现在“关于”等核心位置
 superuser: false
 
 # 职位/描述
-role: 2025级工程硕士
+role: role
 
 # 组织机构/隶属单位
 organizations:
-  - name: 中国农业大学动物科技学院
+  - name: CAU
     url: ''
-  - name: 三亚华大生命科学研究院
-    url: ''
+
 
 # 个人简述（显示在每篇推文末尾的作者介绍栏中）
-bio: 2025级工程硕士。
+bio: who am I
 
 interests:
-  - 动物群体与数量遗传学
-  - 奶牛抗病育种
-  - 人工智能与计算机技术
+  - 1
+  - 2
+  - 3
 
 education:
   courses:
@@ -41,10 +41,7 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: mailto:haozhong03@foxmail.com
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/HaoZhong03
+    link: mailto:afakeemail@mail.com
 
 # 简历pdf链接设置
 # 若要启用，请将 PDF 简历存放到 `static/files/cv.pdf` 并取消下方注释
