@@ -12,27 +12,27 @@ last_name: Tang
 superuser: false
 
 # 职位/描述
-role: role
+role: 博士研究生
 
 # 组织机构/隶属单位
 organizations:
-  - name: CAU
+  - name: 中国农业大学
     url: ''
 
 
 # 个人简述（显示在每篇推文末尾的作者介绍栏中）
-bio: who am I
+bio: 唐永杰，中国农业大学动物科学技术学院博士研究生。
 
 interests:
-  - 1
-  - 2
-  - 3
+  - 奶牛复杂性状遗传机理解析
+  - 分子QTL解析
+  - 种系突变
 
 education:
   courses:
-    - course: 动物科学，学士
+    - course: 动物科学，博士
       institution: 中国农业大学
-      year: 2025
+      year: 2026
 
 # 社交/学术平台链接
 # 图标名称参考：https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -41,7 +41,7 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: mailto:afakeemail@mail.com
+    link: mailto:cautyj@163.com
 
 # 简历pdf链接设置
 # 若要启用，请将 PDF 简历存放到 `static/files/cv.pdf` 并取消下方注释
@@ -61,4 +61,4 @@ user_groups:
   - Researchers
 ---
 <br>
-Introduce。
+唐永杰，中国农业大学动物科学技术学院博士研究生，主要研究方向为奶牛复杂性状的遗传机理解析（分子QTL）。感谢所有人！
