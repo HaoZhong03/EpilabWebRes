@@ -1,54 +1,48 @@
-name: Deploy website to ECS
-
-env:
-  WC_HUGO_VERSION: '0.135.0' 
+name: Deploy to Cloud Server via Caddy
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
+    branches:
+      - main  # 当代码推送到 main 分支时触发
+  workflow_dispatch: # 允许手动触发
 
-permissions:
-  contents: read
+env:
+  # 使用你项目中定义的 Hugo 版本
+  HUGO_VERSION: '0.135.0' 
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
         with:
+          submodules: recursive # 如果有子模块则递归拉取
           fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: ${{ env.WC_HUGO_VERSION }}
-          extended: true
-      - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-        run: hugo --minify
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: website-public
-          path: ./public
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true # 使用扩展版以支持 Sass/SCSS
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: website-public
-          path: ./public
-      - name: Deploy to ECS via SSH
+      - name: Build Website
+        run: |
+          # 清除旧的构建结果并压缩静态资源
+          hugo --minify --gc
+
+      - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:
+          # SSH 私钥，需存放在 GitHub Secrets
           SSH_PRIVATE_KEY: ${{ secrets.ECS_SSH_KEY }}
-          ARGS: "-rlgoDzvc -i --delete"
+          # 部署时使用的参数：递归、保留权限、压缩、删除服务器上多余文件
+          ARGS: "-rlgoDzvc --delete"
+          # 本地构建出的静态文件夹
           SOURCE: "public/"
+          # 服务器 IP
           REMOTE_HOST: ${{ secrets.ECS_HOST }}
+          # 服务器登录用户
           REMOTE_USER: ${{ secrets.ECS_USER }}
+          # 服务器上的目标路径 (需对应 Caddyfile 中的 root 路径)
           TARGET: ${{ secrets.ECS_REMOTE_PATH }}
