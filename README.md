@@ -1,14 +1,14 @@
 # EPILAB门户网页项目
 
-本项目为[中国农业大学](https://www.cau.edu.cn/)[动物科学技术学院](https://cast1.cau.edu.cn/)动物遗传育种系EPILAB团队的学术网页资源仓库，由团队中Zhong、Chen、Jiang三人进行维护。拟使用的域名为：cau666.yyEpiLab.cn。
+本项目为[中国农业大学](https://www.cau.edu.cn/)[动物科学技术学院](https://cast1.cau.edu.cn/)动物遗传育种系EPILAB团队的学术网页资源仓库，由团队中Zhong、Chen、Jiang三人进行维护。拟使用的域名为：www.yyEpiLab.cn。
 
-项目基于模板[Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)进行构建。
+项目基于模板[Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)进行构建，通过 GitHub 关联 Netlify 进行全自动构建与部署。
 
 ![首页](./static/home.png)
 
 ![个人档案页面](./static/Profile.png)
 
-## 项目文件树结构
+## 项目文件树结构（旧，待更新）
 
 ```
 .
@@ -51,36 +51,51 @@ hugo将上述资源构建为`public`h和`resources`文件夹，作为可直接�
 
 - Hugo (Extended版)：用于在本地预览和构建静态文件。
 - Go：Hugo的依赖。
-
 - Git & GitHub：代码托管中心。
-
-- Python 3.12+ & Academic CLI：用于运行 academic 脚本，将 publications.bib 自动转换为网站的论文页面。
 
 2. 服务器部署：
 
-- Web 服务器 (Nginx 或 Apache)：在 ECS 上部署，用于托管 Hugo 生成的 public/ 静态文件夹。
-
-- 终端工具 (如 Termius, PuTTY, iTerm2)：通过 SSH 登录服务器进行配置。
-
-- 传输工具 (如 FileZilla, WinSCP)：用于将本地生成的 public/ 文件夹手动上传到服务器。
-
-- GitHub Actions (SSH 插件)：在代码推送时自动通过 SSH 将编译后的文件拉取或推送到阿里/腾讯云服务器。
-
-## 项目进行计划：
-
-**3月2日-3月8日**：完善网页整体框架及网页元素，制作信息收集清单及收集表。
-
-**3月9日-3月15日**：收集信息并整理，准备域名购买、备案及服务器部署工作。
-
-**3月16日-3月22日**：微调网站细节，准备上线。
+- Web 服务器：使用Netlify部署我们的网站，并将我们的域名指向它。
 
 ## Issue List/代办项目清单
 
-- [ ] 首页介绍语
-- [ ] 首页ppt模块内容
-- [ ] news/events/publication：合适的banner图片
-- [ ] people/publication：整理成员及近年成果介绍
-- [x] 完善news/events/publication(conference-paper/journal-article/preprint)模板
-- [ ] Contact页面课题组联系方式及地理位置
-- [ ] Contact页面网页表单提供商
-- [ ] 部署到ECS的actions
+#### 整体架构
+
+- [ ] 默认语言调整为中文
+- [ ] 背景美化
+- [ ] 子页面新增banner图（荷斯坦、三河、邓川）
+  
+- [ ] 顶端导航栏调整：
+
+```
+左侧：校徽、院徽、EpiLab图标、yyEpiLab字样；
+右侧：
+（1）首页
+（2）新闻
+（3）团队（下拉：教师团队、博士后、博士研究生、硕士研究生、毕业学生）
+（4）项目
+（5）成果（下拉：论文发表、专利申请、使用工具、成果转换）
+（6）加入我们
+（7）搜索、日夜模式切换、语言切换
+```
+
+- [ ] 首页：
+
+```
+（1）介绍大图更换”双甲子“图片，加宽加大，或直接与幻灯片页合并
+（2）介绍文本调整至大图下方
+（3）幻灯片页：可选（科技小院、乳扇、组会或讨论、细胞间、团建、牛场等）
+（4）下方聚合页参考Liu Team
+```
+
+- [ ] 新闻：点击进入推文或新闻稿，重点聚合人才强校
+- [ ] 团队：同上排列、个人介绍页面信息完善。
+- [ ] 项目：排版参考农大主页科学研究部分
+- [ ] 成果：点击直接跳转
+- [ ] 加入我们：联系功能完善（mail to jjh）
+
+#### 其他
+
+- [ ] Netlify部署及域名指向
+- [ ] 信息收集：参考附件1、2
+- [ ] 分工：jjh、cht、qwy收集doi（10年内发表）；asy、wyt校对中英文文本
