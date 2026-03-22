@@ -4,18 +4,21 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: 📰News
+  - name: 首页 🏠
+    url: /
+    weight: 10
+  - name: 动态 📰
     url: news
     weight: 20
-  - name: 👩‍🎓People
+  - name: 团队介绍 👩‍🎓
     url: people
     weight: 30
-  - name: 🌏Events
+  - name: 项目介绍 🌏
     url: event
     weight: 40
-  - name: 📕Publications
+  - name: 成果展示 📕
     url: publication
     weight: 50
-  - name: 📞Contact
+  - name: 联系方式 📞
     url: contact
     weight: 60

@@ -7,3 +7,16 @@
 .cta-group {
   justify-content: center;
 }
+
+/* 隐藏幻灯片左侧和右侧的导航箭头 */
+.carousel-control-prev,
+.carousel-control-next {
+  display: none !important;
+}
+
+/* 如果您还想隐藏底部的小圆点（指示器），可以加上这段 */
+/*
+.carousel-indicators {
+  display: none !important;
+}
+*/
