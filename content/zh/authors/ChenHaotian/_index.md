@@ -12,7 +12,7 @@ last_name: Chen
 superuser: false
 
 # 职位/描述
-role: role
+role: 2025级硕士研究生
 
 # 组织机构/隶属单位
 organizations:
@@ -63,7 +63,7 @@ highlight_name: false
 # 所属的组织团队（用于 People 区块的分类显示）
 # 必须与 content/people/index.md 中的 user_groups 对应
 user_groups:
-  - Researchers
+  - 硕士研究生
 ---
 <br>
 陈昊天，男，硕士研究生，主要从事奶牛抗病育种研究。

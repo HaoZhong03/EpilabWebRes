@@ -58,7 +58,7 @@ highlight_name: false
 # 所属的组织团队（用于 People 区块的分类显示）
 # 必须与 content/people/index.md 中的 user_groups 对应
 user_groups:
-  - Researchers
+  - 博士研究生
 ---
 <br>
 主要研究方向为动物功能基因组学，聚焦奶牛乳房炎抗性、公牛繁殖力等低遗传力性状的遗传机制解析，挖掘功能性调控变异。

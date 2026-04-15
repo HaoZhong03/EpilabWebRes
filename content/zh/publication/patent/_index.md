@@ -1,8 +1,8 @@
 ---
-title: 新闻
+title: 发明专利
 
 # Listing view
-view: compact
+view: citation
 
 # Optional banner image (relative to `assets/media/` folder).
 banner:

@@ -1,8 +1,8 @@
 ---
-title: 新闻
+title: 实用工具
 
 # Listing view
-view: compact
+view: citation
 
 # Optional banner image (relative to `assets/media/` folder).
 banner:

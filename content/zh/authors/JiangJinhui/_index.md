@@ -12,7 +12,7 @@ last_name: Jiang
 superuser: false
 
 # 职位/描述
-role: 2022级本科生
+role: 2026级硕士研究生（拟录取）
 
 # 组织机构/隶属单位
 organizations:
@@ -58,7 +58,7 @@ highlight_name: false
 # 所属的组织团队（用于 People 区块的分类显示）
 # 必须与 content/people/index.md 中的 user_groups 对应
 user_groups:
-  - Researchers
+  - 硕士研究生
 ---
 <br>
 2022 级本科生，2026级硕士研究生，主要研究方向为分子数量遗传学、奶牛金葡菌型乳房炎抗性育种，聚焦于奶牛抗病育种的应用研究与分子基础。

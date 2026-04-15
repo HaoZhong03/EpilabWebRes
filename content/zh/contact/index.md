@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: 联系我们
 date: 2026-03-04
 
 type: landing
@@ -7,9 +7,9 @@ type: landing
 sections:
   - block: contact
     content:
-      title: Contact
+      title: 联系我们
       text: |-
-        Welcome to the EpiLab contact page. Based at China Agricultural University, our team is dedicated to advancing the frontiers of animal population and quantitative genetics. We welcome inquiries regarding academic collaborations, prospective graduate student positions, and industry partnerships focused on dairy cow disease resistance and sustainable cattle breeding. Please feel free to reach out via the form below or through our direct contact information.
+        欢迎通过以下方式与我们联系：
       email: test@example.org
       phone: 888 888 88 88
       address:

@@ -12,7 +12,7 @@ last_name: Qiao
 superuser: false
 
 # 职位/描述
-role: 2026级博士
+role: 2026级博士研究生
 
 # 组织机构/隶属单位
 organizations:
@@ -59,7 +59,7 @@ highlight_name: false
 # 所属的组织团队（用于 People 区块的分类显示）
 # 必须与 content/people/index.md 中的 user_groups 对应
 user_groups:
-  - Researchers
+  - 博士研究生
 ---
 <br>
 2026级博士，主要研究方向为奶牛抗病育种，聚焦于金葡菌乳房炎抗病机制。

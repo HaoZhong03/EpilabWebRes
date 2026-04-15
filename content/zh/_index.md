@@ -1,7 +1,7 @@
 ---
 # 首页配置
 # 留空 title 将默认使用 config/_default/hugo.yaml 中定义的站点标题 (Epilab)
-title: Home
+title: 首页
 date: 2026-03-05
 type: landing # 本页布局：落地页
 

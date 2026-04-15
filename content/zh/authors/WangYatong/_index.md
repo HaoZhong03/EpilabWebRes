@@ -12,7 +12,7 @@ last_name: Wang
 superuser: false
 
 # 职位/描述
-role: role
+role: 2025级博士研究生
 
 # 组织机构/隶属单位
 organizations:
@@ -58,7 +58,7 @@ highlight_name: false
 # 所属的组织团队（用于 People 区块的分类显示）
 # 必须与 content/people/index.md 中的 user_groups 对应
 user_groups:
-  - Researchers
+  - 博士研究生
 ---
 <br>
 Introduce。

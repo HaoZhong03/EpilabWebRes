@@ -61,7 +61,7 @@ highlight_name: false
 # 所属的组织团队（用于 People 区块的分类显示）
 # 必须与 content/people/index.md 中的 user_groups 对应
 user_groups:
-  - Researchers
+  - 硕士研究生
 ---
 <br>
 2025级工程硕士，主要研究方向为动物群体与数量遗传学，聚焦于奶牛的遗传育种，致力于将人工智能和计算机技术应用于畜牧业。

@@ -53,12 +53,12 @@ social:
 email: ''
 
 # 是否在作者列表中突出显示该姓名？
-highlight_name: false
+highlight_name: true
 
 # 所属的组织团队（用于 People 区块的分类显示）
 # 必须与 content/people/index.md 中的 user_groups 对应
 user_groups:
-  - Principal Investigators
+  - 教授
 ---
 <br>
 introduce
