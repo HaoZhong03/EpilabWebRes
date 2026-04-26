@@ -11,39 +11,32 @@ sections:
   - block: slider
     content: # 幻灯片内容列表
       slides:
-      # 大图片
       - title: 
         content: 
-        align: center # 文字对齐方式：居中
+        align: 
         background:
           image:
             filename: header_2025.jpg
-            filters:
-              brightness: 1
-          position: right # 图片对齐位置
+          position: center # 图片对齐位置
           color: '#666' # 兜底背景颜色
 
       # 幻灯片一
-      - title: 👋 Welcome to the group
-        content: Take a look at what we're working on...
-        align: center # 文字对齐方式：居中
+      - title:
+        content: 
+        align: 
         background:
           image:
             filename: cow.png
-            filters:
-              brightness: 0.7
-          position: right # 图片对齐位置
+          position: center # 图片对齐位置
           color: '#666' # 兜底背景颜色
 
       # 幻灯片二
-      - title: Lunch & Learn ☕️
-        content: 'Share your knowledge with the group and explore exciting new topics together!'
-        align: left
+      - title: 
+        content: 
+        align: 
         background:
           image:
             filename: contact.jpg
-            filters:
-              brightness: 0.7
           position: center
           color: '#555'
 
@@ -105,7 +98,7 @@ sections:
       title:
       subtitle:
       text: |
-        {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
+        {{% cta cta_link="./people/" cta_text="团队介绍 →" %}}
     design:
       columns: '1'
 ---

@@ -7,9 +7,7 @@ type: landing
 sections:
   - block: people
     content:
-      title: 成员介绍
-      # Choose which groups/teams of users to display.
-      #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
+      title: 团队介绍
       user_groups:
           - 教授
           - 副研究员
