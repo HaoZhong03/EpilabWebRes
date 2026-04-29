@@ -1,16 +1,8 @@
 # EPILAB门户网页项目
 
-本项目为[中国农业大学](https://www.cau.edu.cn/)（China Agriculture University）[动物科学技术学院](https://cast1.cau.edu.cn/)（College of Animal Science and Technology）动物遗传育种系**EPILAB**团队的学术网站资源仓库，由Zhong、Chen、Jiang三人进行维护。拟使用的域名为：www.yyEpiLab.cn。
+本项目为[中国农业大学](https://www.cau.edu.cn/)（China Agriculture University）[动物科学技术学院](https://cast1.cau.edu.cn/)（College of Animal Science and Technology）动物遗传育种系**EPILAB**团队的学术网站资源仓库，由Zhong、Chen、Jiang三人进行维护。
 
 项目基于模板[Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)进行构建。
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/803467ce-c81e-4740-b754-8087e6938a1b/deploy-status)](https://app.netlify.com/projects/yyepilab/deploys)
-
-在电脑上看起来是这样的：
-![首页](./static/home_wide.png)
-
-手机上看起来可能是这样：
-![首页2](./static/home_narrow.png)
 
 ## 本项目用到的工具或软件
 
