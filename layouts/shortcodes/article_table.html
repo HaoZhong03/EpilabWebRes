@@ -14,7 +14,7 @@
 </div>
 
 <div class="table-responsive">
-  <table class="table table-striped table-hover table-sm" id="pubTable" style="font-size: 0.70rem; line-height: 1.3;">
+  <table class="table table-striped table-hover table-sm" id="pubTable" style="font-size: 0.65rem; line-height: 1.3;">
     <colgroup>
       <col style="width: 53%;">
       <col style="width: 20%;">
@@ -61,6 +61,13 @@
 </div>
 
 <style>
+  #pubSearchInput.form-control:focus,
+  #pubSearchInput.form-control:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #ced4da !important;
+  }
+
   #pubTable {
     width: 100%;
     table-layout: fixed;
@@ -68,8 +75,8 @@
 
   #pubTable th,
   #pubTable td {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     white-space: normal;

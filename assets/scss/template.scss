@@ -8,9 +8,88 @@
   justify-content: center;
 }
 
+/*首页微调*/
 /* 隐藏幻灯片左侧和右侧的导航箭头 */
 .carousel-control-prev,
 .carousel-control-next {
   display: none !important;
 }
 
+/*个人主页微调*/
+/* 将个人介绍页面的整体内容缩小至 80% */
+#profile, 
+.author-profile,
+.wg-about {
+  zoom: 0.8; /* 整体等比缩放 */
+  -moz-transform: scale(0.8); /* 兼容部分旧版火狐浏览器 */
+  -moz-transform-origin: top center;
+}
+/*适当增加底部的间距 */
+.author-profile {
+  margin-bottom: 2rem;
+}
+
+/* 邮箱从图标改为文本按钮 */
+#profile .network-icon-email .network-email-item {
+  margin-inline: 0.1rem;
+}
+/* 将邮箱链接样式设置为文本按钮 */
+#profile .network-icon-email .email-copy-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  line-height: 1;
+  text-decoration: none;
+}
+/* 鼠标悬停时保持文本按钮的样式不变 */
+#profile .network-icon-email .email-copy-link:hover {
+  text-decoration: none;
+}
+#profile .network-icon-email .email-copy-link.copied {
+  opacity: 0.8;
+}
+
+/* 缩小 Markdown 正文部分的字体 */
+.article-style {
+  font-size: 0.8rem !important;
+  line-height: 1.4 !important; 
+  color: #353535 !important;
+}
+/* 确保正文内的段落和列表也强制继承缩小后的字号 */
+.article-style p, 
+.article-style ul, 
+.article-style ol, 
+.article-style li {
+  font-size: 0.8rem !important;
+  line-height: 1.4 !important; /* 字体缩小后，稍微增大行高可以提升长文的阅读体验 */
+}
+/* 如果 Markdown 中使用了各级标题 (##, ###)，可以一并缩小 */
+.article-style h2 { font-size: 1.3rem !important; }
+.article-style h3 { font-size: 1.1rem !important; }
+
+/* 1. 缩小研究方向 (Interests) 列表 */
+.ul-interests li {
+  font-size: 0.7rem !important; /* 调整为 0.8rem */
+  margin-bottom: 1px !important; /* 减少条目之间的垂直间距 */
+}
+/* 2. 缩小教育经历 (Education) 列表 */
+.ul-edu li {
+  font-size: 0.8rem !important;
+}
+/* 专门缩小教育经历中的课程/学位名称 */
+.ul-edu li .description .course {
+  font-size: 0.7rem !important;
+  line-height: 1.3 !important;
+  margin-bottom: 0px !important;
+}
+/* 专门缩小教育经历中的机构/学校名称 */
+.ul-edu li .description .institution {
+  font-size: 0.65rem !important; /* 机构名比学位名再小一点 */
+  color: #717171 !important; /* 颜色调淡一点，增加层次感 */
+}
+/* 3. 缩小这两小节的标题（如“研究方向”、“教育背景”） */
+.wg-about h3, 
+.author-profile h3 {
+  font-size: 0.9rem !important;
+  margin-top: 1.2rem !important;
+  margin-bottom: 0.6rem !important;
+}

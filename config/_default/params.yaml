@@ -11,14 +11,12 @@ appearance:
   font: native
   font_size: L
 
-
-
 marketing:
   seo: # SEO搜索引擎优化
     site_type: Organization
     local_business_type: ''
     org_name: ''
-    description: '中国农业大学动物科学技术学院 EpiLab 团队学术资源网页，专注于动物遗传育种及学术成果展示。'
+    description: '中国农业大学动物科学技术学院 EpiLab 团队学术资源网页。'
     twitter: 'GetResearchDev'
   analytics: # 网站流量分析
     google_analytics: ''
@@ -36,7 +34,7 @@ header:
     enable: true # 是否启动导航栏
     align: r # 链接对齐方式
     show_logo: true # 是否显示logo
-    show_language: true # 是否显示语言切换
+    show_language: false # 是否显示语言切换
     show_day_night: true # 是否显示日夜切换
     show_search: true # 是否显示搜索
     highlight_active_link: true # 是否高亮显示当前激活的页面链接
@@ -99,7 +97,7 @@ features:
       index_name: ''
       show_logo: false
   map: # 地图显示配置
-    provider: 'mapnik'
+    provider: ''
     api_key: ''
     zoom: 15
 
