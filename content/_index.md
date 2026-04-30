@@ -38,7 +38,7 @@ sections:
           image:
             filename: contact.jpg
           position: center
-          color: '#555'
+          color: '#666'
 
     design: # 设计参数
       slide_height: 'calc(100vw / 2.22)' # 幻灯片高度，按视口宽度的 50%：保持(20:19) 比例
@@ -49,12 +49,10 @@ sections:
 # 区块一：顶部区域，用于展示欢迎语和大图
   - block: markdown 
     content:
-      title: 
+      title: 欢迎来到 EpiLab
       text: |
-        # **欢迎来到 EpiLab**
-        这是一段占位文字，介绍 EpiLab 的历史、使命和研究方向。可以在这里添加更多关于实验室的信息，吸引访问者继续浏览网站。
-
-        👇向下探索更多👇
+        -	课题组开展奶牛抗乳房炎性状的体内、外模型构建，转录组、表观基因组等功能基因组学数据分析及功能验证等工作，在国内外高水平期刊发表论文150余篇，以第一发明人授权国家发明专利10项，获省部级科研奖励7项。
+        - 课题组作为国际 **FarmGTEx**（畜禽基因型-组织表达）研究计划的主要发起人之一，与国内外奶牛遗传育种研究领域的科研人员交流合作密切。前期合作建立了[CattleGTEx数据库](https://cgtex.roslin.ed.ac.uk)，为奶牛复杂性状的遗传机制解析提供了宝贵资源。
 
 # 汇总列表（news）
   - block: collection 
@@ -73,9 +71,9 @@ sections:
       order: desc # 按时间倒序排列
       page_type: news # 指定汇总 content/news/ 下的内容
     design:
-      view: card # 卡片式显示
+    # 使用紧凑的列表视图居中显示新闻
+      view: 
       columns: '1' # 设置为单列布局
-
 
 # 汇总列表（publication）
   - block: collection 
@@ -95,10 +93,14 @@ sections:
 # 底部按钮
   - block: markdown
     content:
-      title:
-      subtitle:
+      title: 
+      subtitle: 
       text: |
-        {{% cta cta_link="./people/" cta_text="团队介绍 →" %}}
-    design:
-      columns: '1'
+        ### <center>了解关于我们的更多信息
+        <br>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+          <div>{{% cta cta_link="./people/" cta_text="团队介绍" %}}</div>
+          <div>{{% cta cta_link="https://github.com/HaoZhong03/EpilabWebRes" cta_text="项目地址" %}}</div>
+          <div>{{% cta cta_link="./contact/" cta_text="联系我们" %}}</div>
+        </div>
 ---

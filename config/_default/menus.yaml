@@ -16,27 +16,11 @@ main:
   - name: 项目
     url: projects
     weight: 40
-  # 成果一栏在鼠标悬浮时会有一个下拉菜单，展示不同类型的成果
+
   - name: 成果
     url: publication
-    identifier: publication
     weight: 50
-  - name: 论文发表
-    url: publication/article
-    parent: publication
-    weight: 51
-  - name: 发明专利
-    url: publication/patent
-    parent: publication
-    weight: 52
-  - name: 实用工具
-    url: publication/tool
-    parent: publication
-    weight: 53
-  - name: 成果转化
-    url: publication/translation
-    parent: publication
-    weight: 54
+
   - name: 联系我们
     url: contact
     weight: 60

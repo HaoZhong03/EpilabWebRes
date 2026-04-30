@@ -26,6 +26,4 @@ social:
 user_groups:
   - 博士研究生
 ---
-<br>
-<br>
 &emsp;&emsp;研究方向：整合基因组与功能基因组解析牛的适应性进化机制

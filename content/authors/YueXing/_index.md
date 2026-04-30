@@ -23,6 +23,4 @@ social:
 user_groups:
   - 博士研究生
 ---
-<br>
-<brs>
 &emsp;&emsp;邢悦，中国农业大学动物科学技术学院博士研究生，主要研究方向为表观遗传学在奶牛抗病遗传育种中的机制解析及应用，重点关注奶牛乳房炎的抗性遗传基础与表观调控机制。目前以第一作者在International Journal of Molecular Sciences、Frontiers in Cellular and Infection Microbiology等期刊发表SCI论文，参与申请发明专利1项，并在国际国内学术会议上进行交流。

@@ -1,2 +1,5 @@
 - id: interests
   translation: 研究方向
+
+- id: introduce
+  translation: 个人简介

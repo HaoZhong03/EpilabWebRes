@@ -1,0 +1,140 @@
+<!-- 固定左侧目录容器（仅大屏显示） -->
+<div id="left-toc" class="left-toc d-none d-lg-block" aria-label="目录"></div>
+
+<style>
+/* 固定左侧目录样式：仅在大屏生效 */
+@media (min-width: 992px) {
+	#left-toc {
+		position: fixed;
+		left: 80px;
+		top: 100px;
+		width: 200px;
+		max-height: calc(100vh - 140px);
+		overflow: auto; 
+		padding: 12px 14px; 
+		z-index: 1050; 
+		font-size: 0.95rem;
+
+	}
+	/* 为正文在大屏时留出空间，避免被 TOC 覆盖 */
+	
+}
+/* 在小屏幕上隐藏（Bootstrap 的 d-none d-lg-block 已覆盖显示行为） */
+#left-toc { display: none; }
+
+/* 当前所处部分的高亮样式：文本改为主题色 */
+#left-toc a.active {
+	color: #1565c0;
+	font-weight: 600;
+	background-color: rgba(21,101,192,0.08);
+	border-left: 3px solid #1565c0;
+	padding-left: 5px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	// 生成目录：查找正文内的标题
+	var container = document.querySelector('.article-style') || document.querySelector('.article-container');
+	if (!container) return;
+
+	var headings = Array.prototype.slice.call(container.querySelectorAll('h2, h3, h4'));
+	if (!headings.length) return;
+
+	var toc = document.getElementById('left-toc');
+	if (!toc) return;
+
+	var ul = document.createElement('ul');
+	ul.style.listStyle = 'none';
+	ul.style.paddingLeft = '0';
+	ul.style.margin = '0';
+
+	var items = [];
+
+	headings.forEach(function(h) {
+		// 确保每个标题都有 id
+		if (!h.id) {
+			var slug = h.textContent.trim().toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, '-').replace(/^-+|-+$/g, '');
+			h.id = slug || ('heading-' + Math.random().toString(36).slice(2,8));
+		}
+		var li = document.createElement('li');
+		li.style.marginBottom = '6px';
+		if (h.tagName.toLowerCase() === 'h3') li.style.paddingLeft = '12px';
+		if (h.tagName.toLowerCase() === 'h4') li.style.paddingLeft = '20px';
+
+		var a = document.createElement('a');
+		a.href = '#' + h.id;
+		a.textContent = h.textContent.replace(/\s+/g,' ').trim();
+		a.style.color = 'inherit';
+		a.style.textDecoration = 'none';
+		a.style.display = 'block';
+		a.style.padding = '6px 8px';
+		a.style.borderRadius = '4px';
+		a.addEventListener('click', function (ev) {
+			ev.preventDefault();
+			var target = document.getElementById(h.id);
+			if (target) {
+				var topOffset = 80;
+				var rect = target.getBoundingClientRect();
+				var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+				window.scrollTo({ top: scrollTop + rect.top - topOffset, behavior: 'smooth' });
+			}
+			setActiveById(h.id);
+		});
+
+		li.appendChild(a);
+		ul.appendChild(li);
+		items.push({ id: h.id, heading: h, link: a });
+	});
+
+	// 标题前加一个小标题
+	var headingNode = document.createElement('div');
+	headingNode.style.fontWeight = '700';
+	headingNode.style.marginBottom = '8px';
+	headingNode.textContent = '目录';
+	toc.appendChild(headingNode);
+	toc.appendChild(ul);
+
+	// 根据滚动位置设置高亮
+	function setActiveById(id) {
+		items.forEach(function(it) {
+			if (it.id === id) {
+				it.link.classList.add('active');
+			} else {
+				it.link.classList.remove('active');
+			}
+		});
+	}
+
+	function onScroll() {
+		var offset = 90;
+		var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+		var current = null;
+		
+		for (var i = 0; i < items.length; i++) {
+			var top = items[i].heading.getBoundingClientRect().top + scrollPos - offset;
+			if (scrollPos >= top) current = items[i];
+		}
+		
+		if (current) {
+			setActiveById(current.id);
+		} else {
+			items.forEach(function(it) { it.link.classList.remove('active'); });
+		}
+	}
+
+	var ticking = false;
+	window.addEventListener('scroll', function() {
+		if (!ticking) {
+			window.requestAnimationFrame(function() { 
+				onScroll(); 
+				ticking = false; 
+			});
+			ticking = true;
+		}
+	});
+
+	// 初始化高亮
+	onScroll();
+});
+</script>

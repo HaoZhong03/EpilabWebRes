@@ -22,6 +22,4 @@ social:
 user_groups:
   - 博士研究生
 ---
-<br>
-<br>
 &emsp;&emsp;Introduce。
