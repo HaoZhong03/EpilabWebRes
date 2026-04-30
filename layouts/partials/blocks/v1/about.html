@@ -144,6 +144,61 @@
       {{ end }}
 
     </div>
+
+
+    <div class="col-12 mt-4 pt-3" style="border-top: 1px dashed #ddd;">
+      <div class="section-subheading mb-3" style="font-size: 1.1rem;">
+        <i class="fas fa-book-open text-primary mr-2" style="font-size: 0.9rem;"></i>近期发表
+      </div>
+      <ul class="list-unstyled">
+      {{ $author_cn := $person.title | default "" }}
+      {{ $first := $person.first_name | default "" }}
+      {{ $last := $person.last_name | default "" }}
+
+      {{ $author_en := "" }}
+      {{ $author_en_no_space := "" }}
+      {{ if and (ne $first "") (ne $last "") }}
+       {{ $author_en = printf "%s %s" $first $last }}
+       {{ $author_en_no_space = printf "%s%s" $first $last }}
+      {{ end }}
+
+      {{ $csv_file := resources.Get "data/article.csv" }}
+      {{ if $csv_file }}
+        {{ $data := $csv_file | transform.Unmarshal (dict "delimiter" ",") }}
+        {{ range after 1 $data }}
+          {{ $row := . }}
+          {{ $row_authors_raw := index $row 1 }}
+          {{/* 按分号切分作者字符串 */}}
+          {{ $authors_array := split $row_authors_raw ";" }}
+          {{ $is_matched := false }}
+    
+          {{ range $authors_array }}
+            {{ $clean_name := trim . "*" }}
+            {{ if or (eq $clean_name $author_cn) (eq $clean_name $author_en) (eq $clean_name $author_en_no_space) }}
+              {{ $is_matched = true }}
+            {{ end }}
+          {{ end }}
+    
+          {{ if $is_matched }}
+            <li class="mb-3" style="font-size: 0.85rem; display: flex; align-items: flex-start;">
+              <span style="color: #007bff; margin-right: 8px;">•</span>
+              <div>
+                <a href="https://doi.org/{{ index $row 3 }}" target="_blank" rel="noopener noreferrer" style="font-weight: 500; text-decoration: none;">
+                  {{ index $row 0 }}
+                </a>
+                <span class="text-muted ml-1">({{ index $row 2 }})</span>
+                <div class="text-muted mt-1" style="font-size: 0.75rem;">
+                  {{ index $row 5 }} <span class="badge badge-secondary ml-1" style="font-weight:normal;">{{ index $row 4 }}</span>
+                </div>
+              </div>
+            </li>
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ warnf "未找到 assets/data/article.csv 文件！" }}
+      {{ end }}
+      </ul>
+    </div>
   </div>
 </div>
 
