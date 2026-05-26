@@ -1,0 +1,18 @@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 专门针对包含 carousel-item 的轮播图组件进行修正
+    var carousels = document.querySelectorAll('.carousel-item');
+    carousels.forEach(function(item) {
+        var bg = item.style.backgroundImage;
+        // 检查背景图中是否包含了线上域名或绝对路径的 /media/
+        if (bg && bg.indexOf('/media/') !== -1) {
+            // 使用正则提取出真正的文件名 (例如 header_2025.jpg)
+            var match = bg.match(/\/media\/([^"'\)]+)/);
+            if (match && match[1]) {
+                // 强制将背景图替换为指向本地 media 文件夹的相对路径
+                item.style.backgroundImage = 'url(./media/' + match[1] + ')';
+            }
+        }
+    });
+});
+</script>

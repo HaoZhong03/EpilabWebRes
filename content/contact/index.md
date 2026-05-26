@@ -10,60 +10,20 @@ sections:
       title: 联系我们
       text: |-
         欢迎通过以下方式与我们联系：
-      email: test@example.org
-      phone: 888 888 88 88
+      email: jiang_13462178307@163.com
+      phone: 010-62734611
       address:
-        street: 450 Serra Mall
-        city: Stanford
-        region: CA
-        postcode: '94305'
-        country: United States
-        country_code: US
-      coordinates:
-        latitude: '37.4275'
-        longitude: '-122.1697'
-      directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+        street: 圆明园西路2号
+        city: 北京
+        region: 
+        postcode: '100193'
+        country: 中华人民共和国
+        country_code: CN
+      directions: 中国农业大学西校区动科动医楼459室
       office_hours:
-        - 'Monday 10:00 to 13:00'
-        - 'Wednesday 09:00 to 10:00'
-      #appointment_url: 'https://calendly.com'
-      #contact_links:
-      #  - icon: comments
-      #    icon_pack: fas
-      #    name: Discuss on Forum
-      #    link: 'https://discourse.gohugo.io'
-    
+        - '周一至周六 9:00 至 18:00'
       # Automatically link email and phone or display as text?
       autolink: false
-    
-      # Email form provider
-      form:
-        provider: netlify
-        formspree:
-          id:
-        netlify:
-          # Enable CAPTCHA challenge to reduce spam?
-          captcha: false
     design:
       columns: '1'
-
-  - block: markdown
-    content:
-      title:
-      subtitle: ''
-      text:
-    design:
-      columns: '1'
-      background:
-        image: 
-          filename: contact.jpg
-          filters:
-            brightness: 1
-          parallax: false
-          position: center
-          size: cover
-          text_color_light: true
-      spacing:
-        padding: ['20px', '0', '20px', '0']
-      css_class: fullscreen
 ---

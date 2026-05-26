@@ -5,22 +5,22 @@
 
 main:
   - name: 首页
-    url: /
+    url: index.html
     weight: 10
   - name: 新闻
-    url: news
+    url: news.html
     weight: 20
   - name: 团队
-    url: people
+    url: people.html
     weight: 30
   - name: 项目
-    url: projects
+    url: projects.html
     weight: 40
 
   - name: 成果
-    url: publication
+    url: publication.html
     weight: 50
 
   - name: 联系我们
-    url: contact
+    url: contact.html
     weight: 60

@@ -75,21 +75,6 @@ sections:
       view: 
       columns: '1' # 设置为单列布局
 
-# 汇总列表（publication）
-  - block: collection 
-    content:
-      title: 最新成果
-      subtitle: 探索我们的最新开创性工作。
-      text: ""
-      count: 5
-      filters:
-        folders:
-          - publication
-        publication_type: 'article' # 仅过滤出类型为 'article' 的内容
-    design:
-      view: citation # 使用标准的学术引用样式显示
-      columns: '1'
-
 # 底部按钮
   - block: markdown
     content:
@@ -99,8 +84,8 @@ sections:
         ### <center>了解关于我们的更多信息
         <br>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-          <div>{{% cta cta_link="./people/" cta_text="团队介绍" %}}</div>
+          <div>{{% cta cta_link="./people.html" cta_text="团队介绍" %}}</div>
           <div>{{% cta cta_link="https://github.com/HaoZhong03/EpilabWebRes" cta_text="项目地址" %}}</div>
-          <div>{{% cta cta_link="./contact/" cta_text="联系我们" %}}</div>
+          <div>{{% cta cta_link="./contact.html" cta_text="联系我们" %}}</div>
         </div>
 ---
