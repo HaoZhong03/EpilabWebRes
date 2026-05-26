@@ -1,0 +1,28 @@
+<div class="card mx-auto mb-3" style="max-width: 900px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); border: 0px solid rgba(0,0,0,0.08);">
+  <div class="card-body d-flex justify-content-between align-items-center" style="padding: 0.5rem 1.5rem;">
+    
+    <div class="content-left" style="flex: 1; min-width: 0;">
+      <h5 class="card-title mb-2" style="font-size: 0.9rem; font-weight: 600; line-height: 1.5;">
+        {{ if .Get "link" }}
+          <a href="{{ .Get "link" }}" class="text-decoration-none" style="color: inherit;">{{ .Get "title" }}</a>
+        {{ else }}
+          {{ .Get "title" }}
+        {{ end }}
+      </h5>
+      {{ if .Get "date" }}
+      <div class="card-subtitle text-muted" style="font-size: 0.75rem;">
+        {{ .Get "date" }}
+      </div>
+      {{ end }}
+    </div>
+    
+    {{ if .Get "img" }}
+      <div class="image-right flex-shrink-0" style="margin-left: 2rem;">
+        {{ if .Get "link" }}<a href="{{ .Get "link" }}">{{ end }}
+        <img src="{{ .Get "img" }}" alt="图片" style="width: 200px; height: 150px; object-fit: fill; border-radius: 0px;">
+        {{ if .Get "link" }}</a>{{ end }}
+      </div>
+    {{ end }}
+
+  </div>
+</div>

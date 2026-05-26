@@ -26,4 +26,6 @@ sections:
       autolink: false
     design:
       columns: '1'
+      # 新增以下一行，限制内容最大宽度并居中对齐
+      css_style: 'max-width: 800px; margin: 0 auto;'
 ---
