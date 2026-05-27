@@ -36,7 +36,7 @@ header:
     show_logo: true # 是否显示logo
     show_language: false # 是否显示语言切换
     show_day_night: true # 是否显示日夜切换
-    show_search: true # 是否显示搜索
+    show_search: false # 是否显示搜索
     highlight_active_link: true # 是否高亮显示当前激活的页面链接
 
 # Site footer
