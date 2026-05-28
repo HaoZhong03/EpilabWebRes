@@ -1,6 +1,6 @@
 # EPILAB门户网页项目
 
-本项目为[中国农业大学](https://www.cau.edu.cn/)（China Agriculture University）[动物科学技术学院](https://cast1.cau.edu.cn/)（College of Animal Science and Technology）动物遗传育种系**EPILAB**团队的学术网站资源仓库，由Zhong、Chen、Jiang三人进行维护。
+本项目为[中国农业大学](https://www.cau.edu.cn/)（China Agriculture University）[动物科学技术学院](https://cast1.cau.edu.cn/)（College of Animal Science and Technology）动物遗传育种系**EPILAB**团队的学术网站资源仓库。
 
 项目基于模板[Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)进行构建。
 
@@ -10,9 +10,9 @@
 
 - Hugo (Extended版)：用于在本地预览和构建静态文件。
 - Go：Hugo的依赖。
-- Git & GitHub：代码托管中心。
+- Git & GitHub：代码托管。
 
-使用`Hugo server -D`进行调试（localhost:1313）。网站的正式内容在public文件夹下，只需架设静态服务器即可访问生成的网页。请注意，服务器端口应该与Hugo生成的端口一致（默认为1313）。可同过 `hugo --baseURL="http://localhost:8000/"`命令指定端口。
+使用`Hugo server -D`进行动态调试。网站的静态内容在public文件夹下。
 
 ## Issue List/代办项目清单
 
@@ -21,35 +21,12 @@
 - [x] 默认语言调整为中文
 - [ ] 背景美化
 - [ ] 子页面新增banner图（荷斯坦、三河、邓川）
-  
-- [ ] 顶端导航栏调整：
-
-```text
-左侧：校徽、院徽、EpiLab图标、yyEpiLab字样；
-✅右侧：
-（1）✅首页
-（2）✅新闻
-（3）✅团队
-（4）✅项目
-（5）✅成果（下拉：论文发表、专利申请、使用工具、成果转化）
-（6）✅加入我们
-（7）✅搜索、日夜模式切换、语言切换
-```
-
-- [ ] 首页：
-
-```text
-（1）✅介绍大图更换”双甲子“图片，加宽加大，或直接与幻灯片页合并
-（2）✅介绍文本调整至大图下方
-（3）幻灯片页：可选（科技小院、乳扇、组会或讨论、细胞间、团建、牛场等）
-（4）下方聚合页参考Liu Team
-```
-
-- [ ] 新闻：点击进入推文或新闻稿，重点聚合人才强校
-- [ ] 团队：✅分组排列、个人介绍页面信息完善。
+- [ ] 顶端导航栏左侧：校徽、院徽、EpiLab图标、yyEpiLab字样；
+- [ ] 首页幻灯片页：可选（科技小院、乳扇、组会或讨论、细胞间、团建、牛场等）；下方聚合页参考Liu Team
+- [x] 新闻：点击进入推文或新闻稿，重点聚合人才强校
+- [x] 团队：✅分组排列、个人介绍页面信息完善。
 - [ ] 项目：排版参考农大主页科学研究部分
-- [ ] 成果：点击直接跳转
-- [ ] 加入我们：联系功能完善（mail to jjh）
+- [x] 成果：点击直接跳转
 
 #### 其他
 
