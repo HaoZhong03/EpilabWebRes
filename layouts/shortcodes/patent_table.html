@@ -1,51 +1,47 @@
 {{ $csv := slice }}
-{{ with resources.Get "data/article.csv" }}
+{{ with resources.Get "data/patent.csv" }}
   {{ $opts := dict "delimiter" "," }}
   {{ $csv = . | transform.Unmarshal $opts }}
 {{ else }}
   <div class="alert alert-danger">
-    <strong>错误：</strong> 找不到 CSV 文件，请确保文件路径为 <code>assets/data/article.csv</code>。
+    <strong>错误：</strong> 找不到 CSV 文件，请确保文件路径为 <code>assets/data/patent.csv</code>。
   </div>
 {{ end }}
 
 {{ if gt (len $csv) 0 }}
 <div class="form-group mb-3">
-  <input type="text" id="pubSearchInput" class="form-control" placeholder="搜索文章标题、作者、日期或期刊...">
+  <input type="text" id="patentSearchInput" class="form-control" placeholder="搜索专利名称、发明人、专利号或日期...">
 </div>
 
 <div class="table-responsive">
-  <table class="table table-striped table-sm" id="pubTable" style="font-size: 0.65rem; line-height: 1.3;">
+  <table class="table table-striped table-sm" id="patentTable" style="font-size: 0.65rem; line-height: 1.3;">
     <colgroup>
-      <col style="width: 53%;">
-      <col style="width: 19%;">
-      <col style="width: 13%;">
-      <col style="width: 15%;">
+      <col style="width: 37%;">
+      <col style="width: 23%;">
+      <col style="width: 20%;">
+      <col style="width: 20%;">
     </colgroup>
     <thead class="thead-dark text-center">
       <tr>
-        <th class="sortable align-middle" style="cursor: pointer;">文章标题 <small>⇅</small></th>
-        <th class="sortable align-middle" style="cursor: pointer;">作者 <small>⇅</small></th>
+        <th class="sortable align-middle" style="cursor: pointer;">专利名称 <small>⇅</small></th>
+        <th class="sortable align-middle" style="cursor: pointer;">发明人 <small>⇅</small></th>
+        <th class="sortable align-middle" style="cursor: pointer;">专利号 <small>⇅</small></th>
         <th class="sortable align-middle" style="cursor: pointer;">日期 <small>⇅</small></th>
-        <th class="sortable align-middle" style="cursor: pointer;">期刊 <small>⇅</small></th>
       </tr>
     </thead>
     <tbody>
       {{ range after 1 $csv }}
       <tr>
+        <td class="align-middle">{{ index . 0 }}</td>
         <td class="align-middle">
-          <a href="https://{{ index . 3 }}" target="_blank" rel="noopener noreferrer">
-            {{ index . 0 }}
-          </a>
-        </td>
-        <td class="align-middle">
-          {{ $authorStr := index . 1 }}
-          {{ $authors := split $authorStr ";" }}
+          {{ $inventorStr := index . 1 }}
+          {{ $inventors := split $inventorStr ";" }}
           <span class="author-main">
-            {{ range $i, $name := first 3 $authors }}{{ if $i }}; {{ end }}{{ $name }}{{ end }}
+            {{ range $i, $name := first 3 $inventors }}{{ if $i }}; {{ end }}{{ $name }}{{ end }}
           </span>
-          {{ if gt (len $authors) 3 }}
+          {{ if gt (len $inventors) 3 }}
             <span class="author-more" style="display: none;">
-              {{ range $i, $name := after 3 $authors }}; {{ $name }}{{ end }}
+              {{ range $i, $name := after 3 $inventors }}; {{ $name }}{{ end }}
             </span>
             <a href="javascript:void(0)" class="author-toggle text-primary ml-1" style="text-decoration: none;">
               <small>展开</small>
@@ -53,30 +49,30 @@
           {{ end }}
         </td>
         <td class="text-center align-middle">{{ index . 2 }}</td>
-        <td class="text-center align-middle">{{ index . 5 }}</td>
+        <td class="text-center align-middle">{{ with index . 3 }}{{ . }}{{ else }}——{{ end }}</td>
       </tr>
       {{ end }}
     </tbody>
   </table>
 </div>
 
-<div id="pubTablePagination" class="d-flex justify-content-between align-items-center flex-wrap mt-2 mb-3"></div>
+<div id="patentTablePagination" class="d-flex justify-content-between align-items-center flex-wrap mt-2 mb-3"></div>
 
 <style>
-  #pubSearchInput.form-control:focus,
-  #pubSearchInput.form-control:focus-visible {
+  #patentSearchInput.form-control:focus,
+  #patentSearchInput.form-control:focus-visible {
     outline: none !important;
     box-shadow: none !important;
     border-color: #ced4da !important;
   }
 
-  #pubTable {
+  #patentTable {
     width: 100%;
     table-layout: fixed;
   }
 
-  #pubTable th,
-  #pubTable td {
+  #patentTable th,
+  #patentTable td {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.5rem;
@@ -86,29 +82,27 @@
     overflow-wrap: anywhere;
   }
 
-  /* 禁用所有 hover 效果 */
-  #pubTable tbody tr:hover {
+  #patentTable tbody tr:hover {
     background-color: transparent !important;
   }
 
-  #pubTablePagination .pagination {
+  #patentTablePagination .pagination {
     margin-bottom: 0;
   }
 </style>
 
 <script>
 (function() {
-  const table = document.getElementById('pubTable');
+  const table = document.getElementById('patentTable');
   const tbody = table.querySelector('tbody');
-  const searchInput = document.getElementById('pubSearchInput');
-  const paginationContainer = document.getElementById('pubTablePagination');
+  const searchInput = document.getElementById('patentSearchInput');
+  const paginationContainer = document.getElementById('patentTablePagination');
   const allRows = Array.from(tbody.querySelectorAll('tr'));
   const PAGE_SIZE = 5;
   let currentPage = 1;
   let sortCol = -1;
   let sortDir = 1;
 
-  // 展开/收起逻辑
   table.addEventListener('click', function(e) {
     const toggle = e.target.closest('.author-toggle');
     if (!toggle) return;
