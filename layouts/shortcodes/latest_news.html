@@ -1,0 +1,39 @@
+{{ $count := .Get "count" | default "3" | int }}
+{{ $newsPage := site.GetPage "/news" }}
+{{ if $newsPage }}
+  {{ $items := $newsPage.Params.news_items }}
+  {{ if $items }}
+    {{ $sorted := sort $items "date" "desc" }}
+    {{ range first $count $sorted }}
+      <div class="card mx-auto mb-3" style="max-width: 900px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); border: 0px solid rgba(0,0,0,0.08);">
+        <div class="card-body d-flex justify-content-between align-items-center" style="padding: 0.5rem 1.5rem;">
+          <div class="content-left" style="flex: 1; min-width: 0;">
+            <h5 class="card-title mb-2" style="font-size: 0.9rem; font-weight: 600; line-height: 1.5;">
+              {{ if .link }}
+                <a href="{{ .link }}" class="text-decoration-none" style="color: inherit;">{{ .title }}</a>
+              {{ else }}
+                {{ .title }}
+              {{ end }}
+            </h5>
+            {{ if .date }}
+            <div class="card-subtitle text-muted" style="font-size: 0.75rem;">
+              {{ .date }}
+            </div>
+            {{ end }}
+          </div>
+          {{ if .img }}
+          <div class="image-right flex-shrink-0" style="margin-left: 2rem;">
+            {{ if .link }}<a href="{{ .link }}">{{ end }}
+            <img src="{{ .img }}" alt="{{ .title }}" style="width: 200px; height: 150px; object-fit: fill; border-radius: 0px;">
+            {{ if .link }}</a>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  {{ else }}
+    <p>暂无新闻动态。</p>
+  {{ end }}
+{{ else }}
+  {{ warnf "Could not find news page at /news" }}
+{{ end }}

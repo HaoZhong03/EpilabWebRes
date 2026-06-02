@@ -55,25 +55,15 @@ sections:
         - 课题组作为国际 **FarmGTEx**（畜禽基因型-组织表达）研究计划的主要发起人之一，与国内外奶牛遗传育种研究领域的科研人员交流合作密切。前期合作建立了[CattleGTEx数据库](https://cgtex.roslin.ed.ac.uk)，为奶牛复杂性状的遗传机制解析提供了宝贵资源。
 
 # 汇总列表（news）
-  - block: collection 
+  - block: markdown
     content:
       title: 最新资讯
-      subtitle: 查看我们的新闻和最新动态。
-      text:
-      count: 5 # 数量限制
-      filters: # 过滤选项
-        author: ''
-        category: ''
-        exclude_featured: false
-        publication_type: ''
-        tag: ''
-      offset: 0
-      order: desc # 按时间倒序排列
-      page_type: news # 指定汇总 content/news/ 下的内容
+      subtitle: 查看我们的新闻和最新动态
+      text: |
+        {{< latest_news >}}
+        #### <center>[查看更多](./news.html)</center>
     design:
-    # 使用紧凑的列表视图居中显示新闻
-      view: 
-      columns: '1' # 设置为单列布局
+      columns: '1'
 
 # 底部按钮
   - block: markdown
