@@ -1,0 +1,26 @@
+<div class="tool-card mx-auto mb-3" style="max-width: 900px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.08);">
+  <div class="tool-card-body d-flex justify-content-between align-items-center" style="padding: 0.75rem 1.5rem;">
+    
+    <div class="tool-card-icon flex-shrink-0" style="margin-right: 1.5rem;">
+      {{ if .Get "link" }}<a href="{{ .Get "link" }}" class="text-decoration-none">{{ end }}
+        <img src="{{ .Get "icon" }}" alt="{{ .Get "title" }}" style="width: {{ .Get "icon_size" | default "128px" }}; height: {{ .Get "icon_size" | default "128px" }}; object-fit: contain; border-radius: 8px;">
+      {{ if .Get "link" }}</a>{{ end }}
+    </div>
+    
+    <div class="tool-card-content" style="flex: 1; min-width: 0;">
+      <h5 class="tool-card-title mb-2" style="font-size: 0.9rem; font-weight: 600; line-height: 1.5;">
+        {{ if .Get "link" }}
+          <a href="{{ .Get "link" }}" class="text-decoration-none" style="color: inherit;">{{ .Get "title" }}</a>
+        {{ else }}
+          {{ .Get "title" }}
+        {{ end }}
+      </h5>
+      {{ if .Get "description" }}
+      <div class="tool-card-description text-muted" style="font-size: 0.7rem; line-height: 1.5;">
+        {{ .Get "description" }}
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</div>

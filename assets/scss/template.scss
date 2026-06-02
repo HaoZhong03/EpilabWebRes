@@ -92,3 +92,41 @@
   margin-top: 1.2rem !important;
   margin-bottom: 0.6rem !important;
 }
+
+/*卡片样式*/
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.tool-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.tool-card-body {
+  display: flex;
+  align-items: center;
+}
+
+.tool-card-icon img {
+  border-radius: 8px;
+}
+
+.tool-card-title a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.tool-card-title a:hover {
+  color: #2962ff;
+}
+
+.tool-card-description {
+  word-wrap: break-word;
+}
